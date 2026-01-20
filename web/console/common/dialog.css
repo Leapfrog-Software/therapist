@@ -1,0 +1,23 @@
+
+.dialog_root {
+	position: relative;
+}
+.dialog_table {
+	width:100%;
+	height:100%;
+	position: fixed;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.5);
+	opacity : 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all 0.4s;
+}
+.dialog_td {
+	vertical-align: middle;
+	text-align: center;
+}
+.dialog {
+	pointer-events: auto;
+	margin: 0 auto;
+}

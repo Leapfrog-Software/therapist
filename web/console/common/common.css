@@ -1,0 +1,25 @@
+body {
+    background: #fff;
+}
+
+body, div, span, table, tr, td, select {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", "Avenir", sans-serif, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",Lucida Grande,"メイリオ", Meiryo, Tahoma, Verdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+    font-size: 16px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+img {
+    border: none;
+}

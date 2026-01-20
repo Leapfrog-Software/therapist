@@ -1,0 +1,87 @@
+
+.register_title_base {
+    width:900px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 900px) {
+    .register_title_base {
+        width:90%;
+    }
+}
+.register_title {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 34px;
+    font-weight: bold;
+}
+.register_title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 6px;
+    background-color: rgb(79, 115, 150);
+    border-radius: 999px;
+}
+
+.input_base {
+    width: 600px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+    .input_base {
+        width: 90%;
+    }
+}
+
+input {
+    width:100%;
+    height:40px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-size: 14px;
+}
+input:focus {
+    outline: none;
+    border: 1px solid #507297;
+}
+
+textarea {
+    width:100%;
+    height:150px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 14px;
+    resize: none;
+}
+textarea:focus {
+    outline: none;
+    border: 1px solid #507297;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../img/common/triangle_down.png);
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-size: 10px 6px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 0 0 0 15px;
+    font-size: 14px;
+    color: #000;
+}
+select:focus {
+    outline: 0;
+}

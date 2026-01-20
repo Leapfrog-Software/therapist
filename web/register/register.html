@@ -1,0 +1,352 @@
+<html>
+    <head>
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>腸もみ専門サロン</title>
+        <link rel="stylesheet" type="text/css" href="../common/common.css">
+        <link rel="stylesheet" type="text/css" href="../common/loading.css">
+        <link rel="stylesheet" type="text/css" href="./register.css">
+        <script src="../common/common.js"></script>
+        <script src="../common/loading.js"></script>
+        <script src="./register.js"></script>
+    </head>
+    <body>
+
+        <!-- ローディング -->
+        <table id="loadingTable" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div class="loading_inner">
+                        <img src="../img/common/loading.png">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div style="background: #7C617C;padding:6px 0 6px 10px">
+            <a href="../">
+                <img src="../img/common/header_logo.png" style="height:50px">
+            </a>
+        </div>
+        <img class="top_img" id="topImg" style="width:100%;height:280px;object-fit: cover;">
+        <div style="margin-top: -180px">
+            <div class="register_title_base">
+                <div class="register_title">
+                    セラピスト応募
+                </div>
+            </div>
+        </div>
+
+        <div style="height:180px"></div>
+
+        <div class="input_base">
+            <div style="text-align: center;font-size: 24px;font-weight: bold;">
+                腸もみセラピスト登録項目
+            </div>
+
+            <div style="font-size: 14px;margin-top: 40px">
+                氏名
+            </div>
+            <input type="text" style="margin-top: 3px" id="name">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                住所
+            </div>
+            <input type="text" style="margin-top: 3px" id="address">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                電話
+            </div>
+            <input type="text" style="margin-top: 3px" id="phone">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                メール
+            </div>
+            <input type="text" style="margin-top: 3px" id="email">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                対応可能エリア（市区町村）
+            </div>
+            <input type="text" style="margin-top: 3px" id="area">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                資格
+            </div>
+            <input type="text" style="margin-top: 3px" id="qualification">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                腸もみセラピスト
+                <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
+                    <tr>
+                        <td>
+                            <a href="javascript:onClickExperience(0)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_on.png" style="width:26px" id="experience0">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            経験あり
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <a href="javascript:onClickExperience(1)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_off.png" style="width:26px" id="experience1">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            未経験
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="font-size: 14px;margin-top: 20px">
+                技術指導の希望
+                <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
+                    <tr>
+                        <td>
+                            <a href="javascript:onClickTraining(0)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_on.png" style="width:26px" id="training0">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            要
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <a href="javascript:onClickTraining(1)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_off.png" style="width:26px" id="training1">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            不要
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="font-size: 14px;margin-top: 20px">
+                職業
+            </div>
+            <input type="text" style="margin-top: 3px" id="job">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                稼働可能日
+            </div>
+            <select style="width:100px;margin-top: 3px" id="days">
+                <option>週1日</option>
+                <option>週2日</option>
+                <option>週3日</option>
+                <option>週4日</option>
+                <option>週5日</option>
+                <option>週6日</option>
+                <option>週7日</option>
+            </select>
+
+            <div style="font-size: 14px;margin-top: 20px">
+                時間
+            </div>
+            <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
+                <tr>
+                    <td>
+                        <select style="width:100px;margin-top: 3px" id="startHour">
+                            <option>0時</option>
+                            <option>1時</option>
+                            <option>2時</option>
+                            <option>3時</option>
+                            <option>4時</option>
+                            <option>5時</option>
+                            <option>6時</option>
+                            <option>7時</option>
+                            <option>8時</option>
+                            <option>9時</option>
+                            <option>10時</option>
+                            <option>11時</option>
+                            <option>12時</option>
+                            <option>13時</option>
+                            <option>14時</option>
+                            <option>15時</option>
+                            <option>16時</option>
+                            <option>17時</option>
+                            <option>18時</option>
+                            <option>19時</option>
+                            <option>20時</option>
+                            <option>21時</option>
+                            <option>22時</option>
+                            <option>23時</option>
+                        </select>
+                    </td>
+                    <td style="width:40px;text-align: center;">
+                        〜
+                    </td>
+                    <td>
+                        <select style="width:100px;margin-top: 3px" id="endHour">
+                            <option>0時</option>
+                            <option>1時</option>
+                            <option>2時</option>
+                            <option>3時</option>
+                            <option>4時</option>
+                            <option>5時</option>
+                            <option>6時</option>
+                            <option>7時</option>
+                            <option>8時</option>
+                            <option>9時</option>
+                            <option>10時</option>
+                            <option>11時</option>
+                            <option>12時</option>
+                            <option>13時</option>
+                            <option>14時</option>
+                            <option>15時</option>
+                            <option>16時</option>
+                            <option>17時</option>
+                            <option>18時</option>
+                            <option>19時</option>
+                            <option>20時</option>
+                            <option>21時</option>
+                            <option>22時</option>
+                            <option>23時</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="font-size: 14px;margin-top: 20px">
+                出張の可否
+                <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
+                    <tr>
+                        <td>
+                            <a href="javascript:onClickDispatch(0)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_on.png" style="width:26px" id="dispatch0">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            可
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <a href="javascript:onClickDispatch(1)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_off.png" style="width:26px" id="dispatch1">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            不可
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="font-size: 14px;margin-top: 20px">
+                物販の希望
+                <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
+                    <tr>
+                        <td>
+                            <a href="javascript:onClickSales(0)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_on.png" style="width:26px" id="sales0">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            あり
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                        <td style="padding-left: 20px">
+                            <a href="javascript:onClickSales(1)">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img src="../img/common/check_off.png" style="width:26px" id="sales1">
+                                        </td>
+                                        <td style="padding-left: 8px">
+                                            なし
+                                        </td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="font-size: 16px;margin-top: 40px;font-weight: bold;">
+                振込先
+            </div>
+            <div style="font-size: 14px;margin-top: 10px">
+                銀行名
+            </div>
+            <input type="text" style="margin-top: 3px" id="bank">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                支店名
+            </div>
+            <input type="text" style="margin-top: 3px" id="bankBranch">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                口座番号
+            </div>
+            <input type="text" style="margin-top: 3px" id="bankNo">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                備考
+            </div>
+            <textarea style="margin-top: 3px" id="notes"></textarea>
+
+            <div style="text-align: center;margin-top: 40px">
+                登録フォーム送信後、事務局より3日以内に連絡させていただきます。
+            </div>
+
+            <div style="padding:20px 40px">
+                <a href="javascript:onClickRegister()" style="background: #52B534;display: block;line-height: 60px;font-size: 22px;color:#fff;border-radius: 10px;text-align: center;">
+                    セラピスト応募する
+                </a>
+            </div>
+
+
+        </div>
+
+        <div style="height:60px"></div>
+
+        <script type="text/javascript">
+            initialize();
+        </script>
+
+    </body>
+</html>
