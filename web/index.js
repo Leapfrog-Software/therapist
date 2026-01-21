@@ -1,7 +1,7 @@
 
 function initialize() {
-	preload("topImgPc", "./img/top/top_pc_s.png", "./img/top/top_pc.png");
-	preload("topImgSp", "./img/top/top_sp_s.png", "./img/top/top_sp.png");
+	preload("topImgPc", "./img/top/top_pc_s.png?20260121", "./img/top/top_pc.png?20260121");
+	preload("topImgSp", "./img/top/top_sp_s.png?20260121", "./img/top/top_sp.png?20260121");
 }
 
 function preload(elemId, preSrc, src) {

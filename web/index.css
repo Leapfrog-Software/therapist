@@ -47,6 +47,11 @@
     text-align: center;
     line-height: 34px;
 }
+.ideal_body_red {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f41919;
+}
 @media screen and (max-width: 900px) {
     .ideal_body {
         width: 80%;
@@ -129,6 +134,7 @@
     white-space: nowrap;
     font-size: 28px;
     font-weight: bold;
+    color: #507297;
 }
 .feature_title::after {
     content: "";
@@ -299,10 +305,10 @@
 .image_root {
     background: #FDF4DF;
     border-radius: 10px;
-    width:800px;
+    width:400px;
     margin:0 auto;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
     .image_root {
         width:90%;
     }
@@ -312,7 +318,7 @@
     width:100%;
 }
 .bannar_title {
-    color:#507297;
+    color:#f41919;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -340,7 +346,7 @@
         margin:0 auto;
     }
     .bannar_title {
-        font-size: 28px;
+        font-size: 20px;
     }
     .bannar_link {
         font-size: 16px;
