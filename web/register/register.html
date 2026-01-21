@@ -8,10 +8,10 @@
         <title>腸もみ専門サロン</title>
         <link rel="stylesheet" type="text/css" href="../common/common.css">
         <link rel="stylesheet" type="text/css" href="../common/loading.css">
-        <link rel="stylesheet" type="text/css" href="./register.css">
+        <link rel="stylesheet" type="text/css" href="./register.css?20250121">
         <script src="../common/common.js"></script>
         <script src="../common/loading.js"></script>
-        <script src="./register.js"></script>
+        <script src="./register.js?20250121"></script>
     </head>
     <body>
 
@@ -47,37 +47,102 @@
                 腸もみセラピスト登録項目
             </div>
 
-            <div style="font-size: 14px;margin-top: 40px">
-                氏名
-            </div>
-            <input type="text" style="margin-top: 3px" id="name">
+            <table cellspacing="0" cellpadding="0" style="width:100%;margin-top: 40px;">
+                <tr>
+                    <td>
+                        <div style="font-size: 14px;">
+                            姓
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="nameLast" onkeyup="onKeyUp()">
+                    </td>
+                    <td style="padding-left: 20px;">
+                        <div style="font-size: 14px;">
+                            名
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="nameFirst" onkeyup="onKeyUp()">
+                    </td>
+                </tr>
+            </table>
 
-            <div style="font-size: 14px;margin-top: 20px">
+            <table cellspacing="0" cellpadding="0" style="width:100%;margin-top: 20px;">
+                <tr>
+                    <td>
+                        <div style="font-size: 14px;">
+                            せい
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="kanaLast" onkeyup="onKeyUp()">
+                    </td>
+                    <td style="padding-left: 20px;">
+                        <div style="font-size: 14px;">
+                            めい
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="kanaFirst" onkeyup="onKeyUp()">
+                    </td>
+                </tr>
+            </table>
+
+            <div style="font-size: 16px;margin-top: 40px;font-weight: bold;">
                 住所
             </div>
-            <input type="text" style="margin-top: 3px" id="address">
+            <table cellspacing="0" cellpadding="0" style="width:100%;margin-top: 10px;">
+                <tr>
+                    <td>
+                        <div style="font-size: 14px;">
+                            都道府県
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="address0" onkeyup="onKeyUp()">
+                    </td>
+                    <td style="padding-left: 20px;">
+                        <div style="font-size: 14px;">
+                            市区町村
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="address1" onkeyup="onKeyUp()">
+                    </td>
+                </tr>
+            </table>
+            <table cellspacing="0" cellpadding="0" style="width:100%;margin-top: 20px;">
+                <tr>
+                    <td>
+                        <div style="font-size: 14px;">
+                            番地
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="address2" onkeyup="onKeyUp()">
+                    </td>
+                    <td style="padding-left: 20px;">
+                        <div style="font-size: 12px;">
+                            マンション名と部屋番号
+                        </div>
+                        <input type="text" style="margin-top: 3px" id="address3" onkeyup="onKeyUp()">
+                    </td>
+                </tr>
+            </table>
 
             <div style="font-size: 14px;margin-top: 20px">
-                電話
+                携帯電話番号
             </div>
-            <input type="text" style="margin-top: 3px" id="phone">
+            <input type="text" style="margin-top: 3px" id="phone" onkeyup="onKeyUp()">
 
             <div style="font-size: 14px;margin-top: 20px">
-                メール
+                メールアドレス
             </div>
-            <input type="text" style="margin-top: 3px" id="email">
+            <input type="text" style="margin-top: 3px" id="email" onkeyup="onKeyUp()">
 
             <div style="font-size: 14px;margin-top: 20px">
-                対応可能エリア（市区町村）
+                メールアドレス(確認用)
             </div>
-            <input type="text" style="margin-top: 3px" id="area">
+            <input type="text" style="margin-top: 3px" id="emailConfirm">
 
             <div style="font-size: 14px;margin-top: 20px">
-                資格
+                対応可能エリア（〇〇県〇〇市までお願いします）
+            </div>
+            <input type="text" style="margin-top: 3px" id="area" onkeyup="onKeyUp()">
+
+            <div style="font-size: 14px;margin-top: 20px">
+                保有資格(例:看護師)
             </div>
             <input type="text" style="margin-top: 3px" id="qualification">
 
-            <div style="font-size: 14px;margin-top: 20px">
+            <div style="font-size: 14px;margin-top: 30px">
                 腸もみセラピスト
                 <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
                     <tr>
@@ -149,10 +214,10 @@
                 </table>
             </div>
 
-            <div style="font-size: 14px;margin-top: 20px">
+            <div style="font-size: 14px;margin-top: 30px">
                 職業
             </div>
-            <input type="text" style="margin-top: 3px" id="job">
+            <input type="text" style="margin-top: 3px" id="job" onkeyup="onKeyUp()">
 
             <div style="font-size: 14px;margin-top: 20px">
                 稼働可能日
@@ -234,7 +299,7 @@
                 </tr>
             </table>
 
-            <div style="font-size: 14px;margin-top: 20px">
+            <div style="font-size: 14px;margin-top: 30px">
                 出張の可否
                 <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
                     <tr>
@@ -306,24 +371,6 @@
                 </table>
             </div>
 
-            <div style="font-size: 16px;margin-top: 40px;font-weight: bold;">
-                振込先
-            </div>
-            <div style="font-size: 14px;margin-top: 10px">
-                銀行名
-            </div>
-            <input type="text" style="margin-top: 3px" id="bank">
-
-            <div style="font-size: 14px;margin-top: 20px">
-                支店名
-            </div>
-            <input type="text" style="margin-top: 3px" id="bankBranch">
-
-            <div style="font-size: 14px;margin-top: 20px">
-                口座番号
-            </div>
-            <input type="text" style="margin-top: 3px" id="bankNo">
-
             <div style="font-size: 14px;margin-top: 20px">
                 備考
             </div>
@@ -334,8 +381,8 @@
             </div>
 
             <div style="padding:20px 40px">
-                <a href="javascript:onClickRegister()" style="background: #52B534;display: block;line-height: 60px;font-size: 22px;color:#fff;border-radius: 10px;text-align: center;">
-                    セラピスト応募する
+                <a href="javascript:onClickRegister()" style="background: #CCC;display: block;line-height: 60px;font-size: 22px;color:#fff;border-radius: 10px;text-align: center;" id="registerButton">
+                    送信する
                 </a>
             </div>
 

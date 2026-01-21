@@ -3,8 +3,14 @@
 class Therapist {
 
     public $id;
-    public $name;
-    public $address;
+    public $nameLast;
+    public $nameFirst;
+    public $kanaLast;
+    public $kanaFirst;
+    public $address0;
+    public $address1;
+    public $address2;
+    public $address3;
     public $phone;
     public $email;
     public $area;
@@ -17,9 +23,6 @@ class Therapist {
     public $endHour;
     public $dispatch;
     public $sales;
-    public $bank;
-    public $bankBranch;
-    public $bankNo;
     public $notes;
 
     static function instantiate($filePath) {
@@ -29,30 +32,33 @@ class Therapist {
             return null;
         }
         $exploded = explode("<LFGBDY>", $fileData);
-        if (count($exploded) != 19) {
+        if (count($exploded) < 22) {
             return null;
         }
 
         $data = new Therapist();
         $data->id = $exploded[0];
-        $data->name = $exploded[1];
-        $data->address = $exploded[2];
-        $data->phone = $exploded[3];
-        $data->email = $exploded[4];
-        $data->area = $exploded[5];
-        $data->qualification = $exploded[6];
-        $data->experience = intval($exploded[7]);
-        $data->training = intval($exploded[8]);
-        $data->job = $exploded[9];
-        $data->days = intval($exploded[10]);
-        $data->startHour = intval($exploded[11]);
-        $data->endHour = intval($exploded[12]);
-        $data->dispatch = intval($exploded[13]);
-        $data->sales = intval($exploded[14]);
-        $data->bank = $exploded[15];
-        $data->bankBranch = $exploded[16];
-        $data->bankNo = $exploded[17];
-        $data->notes = $exploded[18];
+        $data->nameLast = $exploded[1];
+        $data->nameFirst = $exploded[2];
+        $data->kanaLast = $exploded[3];
+        $data->kanaFirst = $exploded[4];
+        $data->address0 = $exploded[5];
+        $data->address1 = $exploded[6];
+        $data->address2 = $exploded[7];
+        $data->address3 = $exploded[8];
+        $data->phone = $exploded[9];
+        $data->email = $exploded[10];
+        $data->area = $exploded[11];
+        $data->qualification = $exploded[12];
+        $data->experience = intval($exploded[13]);
+        $data->training = intval($exploded[14]);
+        $data->job = $exploded[15];
+        $data->days = intval($exploded[16]);
+        $data->startHour = intval($exploded[17]);
+        $data->endHour = intval($exploded[18]);
+        $data->dispatch = intval($exploded[19]);
+        $data->sales = intval($exploded[20]);
+        $data->notes = $exploded[21];
         return $data;
     }
 
@@ -60,8 +66,14 @@ class Therapist {
 
         return [
             "id" => $this->id,
-            "name" => $this->name,
-            "address" => $this->address,
+            "nameLast" => $this->nameLast,
+            "nameFirst" => $this->nameFirst,
+            "kanaLast" => $this->kanaLast,
+            "kanaFirst" => $this->kanaFirst,
+            "address0" => $this->address0,
+            "address1" => $this->address1,
+            "address2" => $this->address2,
+            "address3" => $this->address3,
             "phone" => $this->phone,
             "email" => $this->email,
             "area" => $this->area,
@@ -74,9 +86,6 @@ class Therapist {
             "endHour" => $this->endHour,
             "dispatch" => $this->dispatch,
             "sales" => $this->sales,
-            "bank" => $this->bank,
-            "bankBranch" => $this->bankBranch,
-            "bankNo" => $this->bankNo,
             "notes" => $this->notes
         ];
     }
@@ -100,8 +109,14 @@ class Therapist {
 
         $datas = [
             $id,
-            urldecode(getPostParam("name")),
-            urldecode(getPostParam("address")),
+            urldecode(getPostParam("nameLast")),
+            urldecode(getPostParam("nameFirst")),
+            urldecode(getPostParam("kanaLast")),
+            urldecode(getPostParam("kanaFirst")),
+            urldecode(getPostParam("address0")),
+            urldecode(getPostParam("address1")),
+            urldecode(getPostParam("address2")),
+            urldecode(getPostParam("address3")),
             urldecode(getPostParam("phone")),
             urldecode(getPostParam("email")),
             urldecode(getPostParam("area")),
@@ -114,9 +129,6 @@ class Therapist {
             getPostParam("endHour"),
             getPostParam("dispatch"),
             getPostParam("sales"),
-            urldecode(getPostParam("bank")),
-            urldecode(getPostParam("bankBranch")),
-            urldecode(getPostParam("bankNo")),
             urldecode(getPostParam("notes"))
         ];
         return file_put_contents("../../data/therapist/" . $id . ".txt", implode("<LFGBDY>", $datas)) !== false;

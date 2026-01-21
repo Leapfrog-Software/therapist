@@ -35,7 +35,7 @@ function reload() {
     for (var therapist of gTherapists) {
         html += "<a href='javascript:onClickTherapist(\"" + therapist.id + "\")'>";
         html += "<table cellspacing='0' cellpadding='0' class='data_table'><tr>";
-        html += "<td><div class='data_td_div'>" + therapist.name + "</div></td>";
+        html += "<td><div class='data_td_div'>" + therapist.nameLast + therapist.nameFirst + "(" + therapist.kanaLast + therapist.kanaFirst + ")</div></td>";
         html += "<td><div class='data_td_div'>" + ((therapist.phone.length > 0) ? therapist.phone : "&nbsp") + "</div></td>";
         html += "<td><div class='data_td_div'>" + ((therapist.email.length > 0) ? therapist.email : "&nbsp") + "</div></td>";
         html += "<td><div class='data_td_div'>週" + therapist.days + "日 " + therapist.startHour + "時〜" + therapist.endHour + "時</div></td>";
@@ -57,8 +57,8 @@ function onClickTherapist(id) {
 
     for (var therapist of gTherapists) {
         if (therapist.id === id) {
-            document.getElementById("name").innerHTML = therapist.name;
-            document.getElementById("address").innerHTML = therapist.address.length > 0 ? therapist.address : "-";
+            document.getElementById("name").innerHTML = therapist.nameLast + therapist.nameFirst + "(" + therapist.kanaLast + therapist.kanaFirst + ")";
+            document.getElementById("address").innerHTML = therapist.address0 + therapist.address1 + therapist.address2 + therapist.address3;
             document.getElementById("phone").innerHTML = therapist.phone.length > 0 ? therapist.phone : "-";
             document.getElementById("email").innerHTML = therapist.email.length > 0 ? therapist.email : "-";
             document.getElementById("area").innerHTML = therapist.area.length > 0 ? therapist.area : "-";
@@ -73,12 +73,6 @@ function onClickTherapist(id) {
 
             document.getElementById("dispatch").innerHTML = therapist.dispatch == 0 ? "可" : "不可";
             document.getElementById("sales").innerHTML = therapist.sales == 0 ? "あり" : "なし";
-
-            var bank = therapist.bank + "<br>" + therapist.bankBranch + "<br>" + therapist.bankNo;
-            if (bank.length == 0) {
-                bank = "-";
-            }
-            document.getElementById("bank").innerHTML = bank;
 
             document.getElementById("notes").innerHTML = therapist.notes.replace(/\n/g, "<br>");
             showDialog("dialogTherapist");
