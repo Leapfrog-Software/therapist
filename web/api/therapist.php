@@ -25,6 +25,7 @@ class Therapist {
     public $dispatch;
     public $sales;
     public $notes;
+    public $isPaused;
 
     static function instantiate($filePath) {
 
@@ -61,6 +62,12 @@ class Therapist {
         $data->dispatch = intval($exploded[20]);
         $data->sales = intval($exploded[21]);
         $data->notes = $exploded[22];
+
+        if (count($exploded) >= 24) {
+            $data->isPaused = intval($exploded[23]);
+        } else {
+            $data->isPaused = 0;
+        }
         return $data;
     }
 
@@ -89,7 +96,8 @@ class Therapist {
             "endHour" => $this->endHour,
             "dispatch" => $this->dispatch,
             "sales" => $this->sales,
-            "notes" => $this->notes
+            "notes" => $this->notes,
+            "isPaused" => $this->isPaused
         ];
     }
 
@@ -133,9 +141,38 @@ class Therapist {
             getPostParam("endHour"),
             getPostParam("dispatch"),
             getPostParam("sales"),
-            urldecode(getPostParam("notes"))
+            urldecode(getPostParam("notes")),
+            "0"
         ];
         return file_put_contents("../../data/therapist/" . $id . ".txt", implode("<LFGBDY>", $datas)) !== false;
+    }
+
+    static function pause($id, $isPaused) {
+
+        $filePath = "../../data/therapist/" . $id . ".txt";
+        if (file_exists($filePath)) {
+            $fileData = file_get_contents($filePath);
+            if ($fileData !== false) {
+                $exploded = explode("<LFGBDY>", $fileData);
+                if (count($exploded) >= 24) {
+                    $exploded[23] = $isPaused;
+                } else {
+                    $exploded[] = $isPaused;
+                }
+                return file_put_contents($filePath, implode("<LFGBDY>", $exploded)) !== false;
+            }
+        }
+        return false;
+    }
+
+    static function delete($id) {
+
+        $filePath = "../../data/therapist/" . $id . ".txt";
+        if (file_exists($filePath)) {
+            unlink($filePath);
+            return true;
+        }
+        return false;
     }
 }
 
