@@ -8,10 +8,10 @@
         <title>腸もみ専門サロン</title>
         <link rel="stylesheet" type="text/css" href="../common/common.css">
         <link rel="stylesheet" type="text/css" href="../common/loading.css">
-        <link rel="stylesheet" type="text/css" href="./register.css?20250121">
+        <link rel="stylesheet" type="text/css" href="./register.css?20250122">
         <script src="../common/common.js"></script>
         <script src="../common/loading.js"></script>
-        <script src="./register.js?20250121"></script>
+        <script src="./register.js?20250123-2"></script>
     </head>
     <body>
 
@@ -35,7 +35,7 @@
         <div style="margin-top: -180px">
             <div class="register_title_base">
                 <div class="register_title">
-                    セラピスト応募
+                    腸もみセラピスト登録フォーム
                 </div>
             </div>
         </div>
@@ -43,8 +43,9 @@
         <div style="height:180px"></div>
 
         <div class="input_base">
-            <div style="text-align: center;font-size: 24px;font-weight: bold;">
-                腸もみセラピスト登録項目
+            <div style="text-align: center;font-size: 18px;color:#f41919">
+                全ての項目を記入して「登録ボタン」を押してください。<br>(備考欄以外は入力必須です)
+
             </div>
 
             <table cellspacing="0" cellpadding="0" style="width:100%;margin-top: 40px;">
@@ -178,7 +179,12 @@
                 </table>
             </div>
 
-            <div style="font-size: 14px;margin-top: 20px">
+            <div style="margin-top: 5px;font-size: 13px;">
+                Instagram、ホームページ、公式LINEなど活動が確認できるURLを記入してください。ない場合は「なし」と記入してください。
+            </div>
+            <input type="text" style="margin-top:3px" id="url" onkeyup="onKeyUp()">
+
+            <div style="font-size: 14px;margin-top: 30px">
                 技術指導の希望
                 <table cellspacing="0" cellpadding="0" style="margin-top: 3px;height:40px">
                     <tr>

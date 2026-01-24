@@ -16,6 +16,7 @@ class Therapist {
     public $area;
     public $qualification;
     public $experience;
+    public $url;
     public $training;
     public $job;
     public $days;
@@ -32,7 +33,7 @@ class Therapist {
             return null;
         }
         $exploded = explode("<LFGBDY>", $fileData);
-        if (count($exploded) < 22) {
+        if (count($exploded) < 23) {
             return null;
         }
 
@@ -51,14 +52,15 @@ class Therapist {
         $data->area = $exploded[11];
         $data->qualification = $exploded[12];
         $data->experience = intval($exploded[13]);
-        $data->training = intval($exploded[14]);
-        $data->job = $exploded[15];
-        $data->days = intval($exploded[16]);
-        $data->startHour = intval($exploded[17]);
-        $data->endHour = intval($exploded[18]);
-        $data->dispatch = intval($exploded[19]);
-        $data->sales = intval($exploded[20]);
-        $data->notes = $exploded[21];
+        $data->url = $exploded[14];
+        $data->training = intval($exploded[15]);
+        $data->job = $exploded[16];
+        $data->days = intval($exploded[17]);
+        $data->startHour = intval($exploded[18]);
+        $data->endHour = intval($exploded[19]);
+        $data->dispatch = intval($exploded[20]);
+        $data->sales = intval($exploded[21]);
+        $data->notes = $exploded[22];
         return $data;
     }
 
@@ -79,6 +81,7 @@ class Therapist {
             "area" => $this->area,
             "qualification" => $this->qualification,
             "experience" => $this->experience,
+            "url" => $this->url,
             "training" => $this->training,
             "job" => $this->job,
             "days" => $this->days,
@@ -122,6 +125,7 @@ class Therapist {
             urldecode(getPostParam("area")),
             urldecode(getPostParam("qualification")),
             getPostParam("experience"),
+            urldecode(getPostParam("url")),
             getPostParam("training"),
             urldecode(getPostParam("job")),
             getPostParam("days"),

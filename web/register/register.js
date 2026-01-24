@@ -17,7 +17,6 @@ function checkInput() {
 	var address0 = document.getElementById("address0").value;
 	var address1 = document.getElementById("address1").value;
 	var address2 = document.getElementById("address2").value;
-	var address3 = document.getElementById("address3").value;
 	var phone = document.getElementById("phone").value;
 	var email = document.getElementById("email").value;
 	var area = document.getElementById("area").value;
@@ -31,7 +30,6 @@ function checkInput() {
 		address0,
 		address1,
 		address2,
-		address3,
 		phone,
 		email,
 		area,
@@ -43,6 +41,14 @@ function checkInput() {
 			isFull = false;
 		}
 	}
+
+	if (gExperience == 0) {
+		var url = document.getElementById("url").value;
+		if (url.length == 0) {
+			isFull = false;
+		}
+	}
+
 	if (isFull) {
 		document.getElementById("registerButton").style.background = "#52B534";
 		return true;
@@ -70,6 +76,8 @@ function onClickExperience(index) {
 	gExperience = index;
 	document.getElementById("experience0").src = (index == 0) ? "../img/common/check_on.png" : "../img/common/check_off.png";
 	document.getElementById("experience1").src = (index == 1) ? "../img/common/check_on.png" : "../img/common/check_off.png";
+
+	checkInput();
 }
 
 function onClickTraining(index) {
@@ -112,6 +120,7 @@ function onClickRegister() {
 	var emailConfirm = document.getElementById("emailConfirm").value;
 	var area = document.getElementById("area").value;
 	var qualification = document.getElementById("qualification").value;
+	var url = document.getElementById("url").value;
 	var job = document.getElementById("job").value;
 	var notes = document.getElementById("notes").value;
 
@@ -145,6 +154,7 @@ function onClickRegister() {
         area: encodeURI(area),
         qualification: encodeURI(qualification),
         experience: gExperience,
+        url: encodeURI(url),
         training: gTraining,
         job: encodeURI(job),
         days: document.getElementById("days").selectedIndex + 1,

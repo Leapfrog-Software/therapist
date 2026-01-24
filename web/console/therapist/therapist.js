@@ -63,7 +63,7 @@ function onClickTherapist(id) {
             document.getElementById("email").innerHTML = therapist.email.length > 0 ? therapist.email : "-";
             document.getElementById("area").innerHTML = therapist.area.length > 0 ? therapist.area : "-";
             document.getElementById("qualification").innerHTML = therapist.qualification.length > 0 ? therapist.qualification : "-";
-            document.getElementById("experience").innerHTML = therapist.experience == 0 ? "経験あり" : "未経験";
+            document.getElementById("experience").innerHTML = (therapist.experience == 0 ? "経験あり" : "未経験") + "<br>" + therapist.url;
             document.getElementById("training").innerHTML = therapist.training == 0 ? "要" : "不要";
             document.getElementById("job").innerHTML = therapist.job.length > 0 ? therapist.job : "-";
 
